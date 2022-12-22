@@ -12,7 +12,7 @@ class Yorkshire: Dog(){
     }
 }
 
-//prática de herança com construtor parametrizado
+//prática de herança com construtor parametrizado e com Herança enviando parâmetro para superclasse
 open class Car(nome: String){
     val carName: String = nome
     open fun sayCarName(){
@@ -20,6 +20,10 @@ open class Car(nome: String){
     }
 }
 class Volks : Car("Gol")
+
+//Herança enviando parâmetro para superclasse
+class Nissan(name: String): Car(name)
+
 
 fun main(){
     //chamando classes e testando aplicabilidade da propriedade e vendo como funciona herança simples
@@ -29,4 +33,8 @@ fun main(){
     //chamando as classes e trabalhando com herança com construtor parametrizado e também plimorfismo
     val car: Car = Volks()
     car.sayCarName()
+
+    //chamando as classes e implementando o parâmetro aqui na classe filha para a superclasse
+    val carNissan: Car = Nissan("Versa")
+    carNissan.sayCarName()
 }
